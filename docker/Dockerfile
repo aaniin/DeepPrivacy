@@ -17,6 +17,7 @@ RUN pip uninstall -y apex
 RUN git clone https://github.com/NVIDIA/apex.git
 RUN pip install --upgrade numpy
 WORKDIR /pip_installs/apex
+RUN git checkout f3a960f80244cf9e80558ab30f7f7e8cbf03c0a0
 RUN pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 WORKDIR /workspace
 
